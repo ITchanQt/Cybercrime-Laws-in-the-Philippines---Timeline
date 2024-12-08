@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybercrime Laws in the Philippines - Timeline</title>
+    <style>
+        /* Color Palette */
+        :root {
+            --bg-light: #F5F5F7; /* Light gray background */
+            --text-dark: #212121; /* Dark gray text */
+            --primary-blue: #1565C0; /* Buttons & timeline */
+            --light-blue: #BBDEFB; /* Content background */
+            --hover-blue: #0D47A1; /* Button hover */
+            --timeline-dot: #1976D2; /* Highlight blue */
+        }
+
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            color: var(--text-dark);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: var(--bg-light);
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('bg_CL.png'); /* Optional background image */
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
+            filter: blur(2px) brightness(0.8) grayscale(50%);
+            background-attachment: fixed;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 10px;
+        }
+
+        /* Title */
+        .title {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--hover-blue);
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .title::before,
+        .title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            width: 30%;
+            height: 2px;
+            background-color: var(--primary-blue);
+        }
+
+        .title::before {
+            left: 0;
+        }
+
+        .title::after {
+            right: 0;
+        }
+
+        /* Timeline Layout */
+        .timeline {
+            position: relative;
+            padding: 20px 20px 0 20px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--primary-blue);
+            height: 100%;
+            left: 48%;
+            top: 0;
+            transform: translateX(-50%);
+        }
+
+        /* Timeline Items */
+        .timeline-item {
+            position: relative;
+            width: 45%;
+            margin-bottom: 30px;
+            padding: 10px 20px;
+            box-sizing: border-box;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+            text-align: left;
+        }
+
+        /* Buttons */
+        .year-btn {
+            background-color: var(--primary-blue);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .year-btn:hover {
+            background-color: var(--hover-blue);
+            transform: translateY(-2px);
+        }
+
+        .content {
+            display: none;
+            background-color: var(--light-blue);
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .content.active {
+            display: block;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background-color: var(--timeline-dot);
+            border-radius: 50%;
+            top: 20px;
+            right: -6px;
+        }
+
+        .timeline-item:nth-child(even)::after {
+            left: -6px;
+        }
+
+        mark { 
+            background-color: var(--light-blue); /* Change the background color */ 
+            color: var(--text-dark); /* Change the text color */ 
+            padding: 0.2em 0.4em; /* Add padding around the highlighted text */ 
+            border-radius: 0.2em; /* Round the corners */
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                left: 0 !important;
+                padding-left: 50px;
+                text-align: left;
+            }
+
+            .timeline-item::after {
+                left: 15px;
+            }
+            .timeline-item:nth-child(odd)::after {
+            left: -6px;
+        }
+            .year-btn {
+                font-size: 0.9rem;
+                padding: 8px 10px;
+            }
+
+            .content {
+                font-size: 0.9rem;
+                padding: 10px;
+            }
+
+            .title {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .year-btn {
+                font-size: 0.8rem;
+                padding: 7px;
+            }
+
+            .title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1 class="title"><b>II. Digital Timeline:</b><br>Cybercrime Laws in the Philippines<br>Timeline</h1>
+    <div class="container">
+        <div class="timeline">
+            <!-- Pre-2012 -->
+            <div class="timeline-item">
+                <button class="year-btn" data-year="pre-2012"><mark>A. Major Milestone</mark><br><br>Pre-2012</button>
+                <div class="content" id="pre-2012-content">
+                    <p>Cybercrime offenses were prosecuted under existing laws (fraud, theft), but there was no comprehensive framework for addressing internet-related crimes.</p>
+                </div>
+            </div>
+
+            <!-- 2012: RA 10175 -->
+            <div class="timeline-item">
+                <button class="year-btn" data-year="2012"><mark>B. Key Laws</mark><br><br>2012</button>
+                <div class="content" id="2012-content">
+                    <p><b>Cybercrime Prevention Act of 2012 (RA 10175):</b> A landmark law that defined cybercrimes, established penalties, and outlined investigation procedures. Driven by the rise of cyber threats.</p>
+                </div>
+            </div>
+
+            <!-- Post-2012 -->
+            <div class="timeline-item">
+                <button class="year-btn" data-year="post-2012">Post-2012</button>
+                <div class="content" id="post-2012-content">
+                    <p><b>Challenges and Updates:</b> Debates about freedom of expression and potential for abuse. The law faces ongoing amendments to adapt to evolving cyber threats.</p>
+                </div>
+            </div>
+        </div>
+        <p style="text-align: center; margin-top: 20px; font-size: 1rem; color: var(--hover-blue);">
+            Submitted by:<br>
+            <b>Aljhun V. Elizalde</b><br>
+            <b>Sandro P. Royandoyan</b><br>
+            <b>Maryjane M. Bacsal</b>
+        </p>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const yearButtons = document.querySelectorAll('.year-btn');
+
+            yearButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const year = button.dataset.year;
+                    const content = document.getElementById(`${year}-content`);
+
+                    button.classList.toggle('active');
+                    content.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
